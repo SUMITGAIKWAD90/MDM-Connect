@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions</title>
+    <style>
+      /* Global Styles */
+      body {
+        background-color: rgb(255, 255, 129); /* Yellow themed background */
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, sans-serif;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Navigation Bar Styles */
+      .navbar {
+        background-color: #ffc400; /* Yellow background for navbar */
+        padding: 5vh 0;
+      }
+
+      .navbar .logo {
+        font-size: 24px;
+        color: #333;
+        float: left;
+      }
+
+      .navbar .nav-links {
+        float: right;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .navbar .nav-links li {
+        display: inline;
+        margin-left: 20px;
+      }
+
+      .navbar .nav-links li a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      /* Responsive Styles */
+      @media only screen and (max-width: 768px) {
+        .navbar .logo {
+          float: none;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+
+        .navbar .nav-links {
+          float: none;
+          text-align: center;
+        }
+
+        .navbar .nav-links li {
+          display: block;
+          margin: 0;
+        }
+
+        .navbar .nav-links li a {
+          display: block;
+          padding: 10px 0;
+        }
+      }
+
+      /* Slideshow container */
+      .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+
+      /* Caption text */
+      .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+
+      /* The dots/bullets/indicators */
+      .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active {
+        background-color: #717171;
+      }
+
+      /* Fading animation */
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      .fade img {
+        width: 100%;
+        border: 6px solid black;
+        border-radius: 20px;
+        padding: 3vh;
+        margin: 10vh 0;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .text {
+          font-size: 11px;
+        }
+      }
+
+      /* *************** Section 2 ***********************/
+
+      section.second {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url(public/mid3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        font-weight: 600;
+        color: #ffb85d;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      .labelform {
+        display: flex;
+        /* flex-direction: column; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        padding: 10px;
+      }
+
+      .addtransactions {
+        width: 100%;
+        background: #ffb85d;
+        height: 6vh;
+      }
+
+      section.second h1 {
+        font-size: 3.3rem;
+        color: black;
+      }
+
+      label {
+        font-size: 2.2rem;
+      }
+
+      form {
+        /* background-color: #ffc400; */
+        /* opacity: 0.4; */
+      }
+
+      /* Styles for the table */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      thead th,
+      tbody td {
+        border: 1px solid #dddddd; /* Gray border for each cell */
+        padding: 8px;
+      }
+
+      thead th {
+        background-color: #f2f2f2; /* Light gray background for table header */
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #f2f2f2; /* Alternate row background color */
+      }
+
+      /* ************* END of Section2 ***************** */
+
+      /* Styles for the rest of your page content */
+      /* Your existing styles for the image slider and transactions section */
+
+      footer {
+        background-color: #ffc400;
+        height: 8vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">Transactions</div>
+        <ul class="nav-links">
+          <li><a href="#section1">Home</a></li>
+          <li><a href="#section2">Transactions</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Section 1: Image Slider -->
+    <section id="section1" class="first">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="public/mid1.jpg" style="width: 100%" />
+          <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="public/mid2.avif" style="width: 100%" />
+          <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="public/mid3.jpg" style="width: 100%" />
+          <div class="text"></div>
+        </div>
+        <br />
+
+        <div style="text-align: center">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Transactions -->
+    <section id="section2" class="second">
+      <h1>Transactions</h1>
+      <form onsubmit="event.preventDefault(); addToBlockchain()">
+        <div class="labelform">
+          <label for="receiver">Receiver Address:</label><br />
+          <input type="text" id="receiver" name="receiver" /><br />
+        </div>
+        <div class="labelform">
+          <label for="amount">Amount (in Ether):</label><br />
+          <input type="number" id="amount" name="amount" step="0.0001" /><br />
+        </div>
+        <div class="labelform">
+          <label for="message">Message:</label><br />
+          <input type="text" id="message" name="message" /><br />
+        </div>
+        <div class="labelform">
+          <label for="keyword">Keyword:</label><br />
+          <input type="text" id="keyword" name="keyword" /><br />
+        </div>
+        <br />
+        <button class="addtransaction" type="submit">Add Transaction</button>
+      </form>
+      <div id="messageDiv"></div>
+      <!-- Div to display the message -->
+      <div>
+        <h2>Transaction History</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Receiver Address</th>
+              <th>Amount (Ether)</th>
+              <th>Amount (Rupees)</th>
+              <th>Message</th>
+              <th>Keyword</th>
+              <th>Timestamp</th>
+            </tr>
+          </thead>
+          <tbody id="tableDiv"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Transactions. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+    <script>
+      window.addEventListener("load", async () => {
+        if (window.ethereum) {
+          window.web3 = new Web3(window.ethereum);
+          await window.ethereum.enable();
+        } else if (window.web3) {
+          window.web3 = new Web3(window.web3.currentProvider);
+        } else {
+          console.log(
+            "Non-Ethereum browser detected. You should consider trying MetaMask!"
+          );
+        }
+      });
+
+      async function addToBlockchain() {
+        const contractAddress = "0x0b9547dB2d8c81E36E450BeC1F7C708CE438aA08"; // Replace with your contract address
+        const abi = [
+          {
+            inputs: [
+              {
+                internalType: "address payable",
+                name: "receiver",
+                type: "address",
+              },
+              {
+                internalType: "uint256",
+                name: "amount",
+                type: "uint256",
+              },
+              {
+                internalType: "string",
+                name: "message",
+                type: "string",
+              },
+              {
+                internalType: "string",
+                name: "keyword",
+                type: "string",
+              },
+            ],
+            name: "addToBlockchain",
+            outputs: [],
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            anonymous: false,
+            inputs: [
+              {
+                indexed: false,
+                internalType: "address",
+                name: "from",
+                type: "address",
+              },
+              {
+                indexed: false,
+                internalType: "address",
+                name: "receiver",
+                type: "address",
+              },
+              {
+                indexed: false,
+                internalType: "uint256",
+                name: "amount",
+                type: "uint256",
+              },
+              {
+                indexed: false,
+                internalType: "string",
+                name: "message",
+                type: "string",
+              },
+              {
+                indexed: false,
+                internalType: "uint256",
+                name: "timestamp",
+                type: "uint256",
+              },
+              {
+                indexed: false,
+                internalType: "string",
+                name: "keyword",
+                type: "string",
+              },
+            ],
+            name: "Transfer",
+            type: "event",
+          },
+          {
+            inputs: [],
+            name: "getAllTransactions",
+            outputs: [
+              {
+                components: [
+                  {
+                    internalType: "address",
+                    name: "sender",
+                    type: "address",
+                  },
+                  {
+                    internalType: "address",
+                    name: "receiver",
+                    type: "address",
+                  },
+                  {
+                    internalType: "uint256",
+                    name: "amount",
+                    type: "uint256",
+                  },
+                  {
+                    internalType: "string",
+                    name: "message",
+                    type: "string",
+                  },
+                  {
+                    internalType: "uint256",
+                    name: "timestamp",
+                    type: "uint256",
+                  },
+                  {
+                    internalType: "string",
+                    name: "keyword",
+                    type: "string",
+                  },
+                ],
+                internalType: "struct Transactions.TransferStruct[]",
+                name: "",
+                type: "tuple[]",
+              },
+            ],
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            inputs: [],
+            name: "getTransactionCount",
+            outputs: [
+              {
+                internalType: "uint256",
+                name: "",
+                type: "uint256",
+              },
+            ],
+            stateMutability: "view",
+            type: "function",
+          },
+        ]; // Replace with your contract ABI
+
+        const contract = new window.web3.eth.Contract(abi, contractAddress);
+
+        const receiver = document.getElementById("receiver").value;
+        const amountInEther = document.getElementById("amount").value;
+        const amountInWei = window.web3.utils.toWei(amountInEther, "ether"); // Convert to Wei
+        const message = document.getElementById("message").value;
+        const keyword = document.getElementById("keyword").value;
+
+        try {
+          const transaction = await contract.methods
+            .addToBlockchain(receiver, amountInWei, message, keyword)
+            .send({
+              from: window.ethereum.selectedAddress,
+            });
+
+          // Transaction successful, display message
+          const messageDiv = document.getElementById("messageDiv");
+          messageDiv.innerHTML = `Transaction added to blockchain! Transaction hash: ${transaction.transactionHash}`;
+
+          // Display transaction details in a table
+          const tableDiv = document.getElementById("tableDiv");
+          const amountInRupees = amountInEther * 50000; // Assuming 1 Ether = 50000 Rupees
+          tableDiv.innerHTML += `
+                    <tr>
+                        <td>${receiver}</td>
+                        <td>${amountInEther} Ether</td>
+                        <td>${amountInRupees} Rupees</td>
+                        <td>${message}</td>
+                        <td>${keyword}</td>
+                        <td>${new Date().toLocaleString()}</td>
+                    </tr>
+                `;
+        } catch (error) {
+          // Transaction failed, display error message
+          const messageDiv = document.getElementById("messageDiv");
+          messageDiv.innerHTML = `Error: ${error.message}`;
+        }
+      }
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
