@@ -1,9 +1,9 @@
-import { Routes, Route } from "react-router-dom";
-import Headermain from "../components/Headermain";
+import { Route, Routes } from "react-router-dom";
 import Footer from "../components/Footer";
-import Paymentpage from "./Paymentpage";
 import Guidelines from "../components/Guidelines";
+import Headermain from "../components/Headermain";
 import News from "../components/News";
+import Paymentpage from "./Paymentpage";
 
 
 const main = () => {
