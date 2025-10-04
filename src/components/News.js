@@ -233,7 +233,7 @@ export default function NewsUpdatesSection() {
   };
 
   return (
-    <div className="py-12 px-4 bg-gray-50">
+    <div className="py-12 px-4 ">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* SECTION 1: INFORMATION */}
         <section>
