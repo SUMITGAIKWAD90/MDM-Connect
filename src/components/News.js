@@ -305,8 +305,14 @@ export default function NewsUpdatesSection() {
               {newsItems.map((item, index) => (
                 <div
                   key={item.id}
+<<<<<<< HEAD
                   className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"
                     }`}
+=======
+                  className={`absolute inset-0 transition-opacity duration-700 ${
+                    index === currentSlide ? "opacity-100" : "opacity-0"
+                  }`}
+>>>>>>> d781c17 (Some technical Issue Fixed)
                 >
                   <div className="p-10 h-full flex flex-col justify-center">
                     <div className="mb-4">
@@ -350,10 +356,18 @@ export default function NewsUpdatesSection() {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
+<<<<<<< HEAD
                   className={`transition-all ${currentSlide === index
                       ? "bg-orange-500 w-8 h-3"
                       : "bg-gray-300 w-3 h-3"
                     } rounded-full hover:bg-orange-400`}
+=======
+                  className={`transition-all ${
+                    currentSlide === index
+                      ? "bg-orange-500 w-8 h-3"
+                      : "bg-gray-300 w-3 h-3"
+                  } rounded-full hover:bg-orange-400`}
+>>>>>>> d781c17 (Some technical Issue Fixed)
                 />
               ))}
             </div>
@@ -407,6 +421,10 @@ export default function NewsUpdatesSection() {
                     <img
                       src={item.image}
                       alt={item.title}
+<<<<<<< HEAD
+=======
+                      loading="lazy"
+>>>>>>> d781c17 (Some technical Issue Fixed)
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       onError={(e) => {
                         e.target.src =
@@ -437,7 +455,10 @@ export default function NewsUpdatesSection() {
               <ChevronRight className="w-6 h-6 text-green-600" />
             </button>
           </div>
+<<<<<<< HEAD
           
+=======
+>>>>>>> d781c17 (Some technical Issue Fixed)
         </section>
       </div>
     </div>

@@ -11,6 +11,10 @@ const Header = () => (
                     src="/images/logo.png" 
                     alt="Government Seal" 
                     className="w-20 h-20"
+<<<<<<< HEAD
+=======
+                    loading="lazy"
+>>>>>>> d781c17 (Some technical Issue Fixed)
                   />
                 </div>
                 <div>
