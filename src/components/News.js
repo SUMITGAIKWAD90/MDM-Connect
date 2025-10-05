@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import { Bell, FileText, Info, Users, Target, Utensils, ClipboardCheck, Phone, HelpCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Bell, ChevronLeft, ChevronRight, ClipboardCheck, FileText, HelpCircle, Info, Phone, Target, Users, Utensils } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function NewsUpdatesSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -415,15 +415,6 @@ export default function NewsUpdatesSection() {
               <ChevronRight className="w-6 h-6 text-green-600" />
             </button>
           </div>
-
-          {/* Pause Indicator */}
-          {isGrPaused && (
-            <div className="text-center mt-4">
-              <span className="inline-block bg-green-100 text-green-700 text-sm px-4 py-2 rounded-full">
-                Auto-scroll paused • Hover to navigate manually
-              </span>
-            </div>
-          )}
         </section>
 
       </div>

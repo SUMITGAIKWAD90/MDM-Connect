@@ -8,7 +8,7 @@ import Paymentpage from "./Paymentpage";
 
 const main = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-orange-50 to-green-50">
+    <div className="min-h-screen">
       <Headermain />
 
         <Routes>
