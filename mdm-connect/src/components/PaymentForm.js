@@ -151,7 +151,7 @@ const PaymentForm = ({
           </div>
         )}
       </div>
-    </div>
+      </div>
   );
 };
 
