@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import PageLayout from '../components/PageLayout';
+import PageLayout_public from '../components/PageLayout_public.js';
 import ComplaintFormSection from '../components/publicPortal/ComplaintFormSection';
 import PublicHero from '../components/publicPortal/PublicHero';
 import SearchCard from '../components/publicPortal/SearchCard';
@@ -83,7 +84,7 @@ const PublicPage = () => {
   };
 
   return (
-    <PageLayout>
+    <PageLayout_public>
       <PublicHero />
       <SearchCard
         udise={udise}
@@ -117,7 +118,7 @@ const PublicPage = () => {
           setSubmitMessage('');
         }}
       />
-    </PageLayout>
+    </PageLayout_public>
   );
 };
 

@@ -12,7 +12,7 @@ const HomeHero = () => {
         </p>
         <div className="hero__actions">
           <Link to="/public" className="btn">
-            View Transparency Portal
+            Public Portal
           </Link>
           <Link to="/gov-login" className="btn-outline">
             Government Login
